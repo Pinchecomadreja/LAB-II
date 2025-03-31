@@ -178,20 +178,16 @@ Escribe una funcion que tome una cadena como entrada y la invierta utilizando
 punteros y funciones de la libreria string.h.
 */
 
-int main_1_5(void){
+void reverse_string(char *string1){
 
-    char string1[20];
-    char rev_string[20];
-    int len;
+    char rev_string[40];
     int k=0;
-
-    fgets(string1,sizeof(string1),stdin);
-    //string1[strspn(string1,"\n")]='\0';
+    int len;
 
     len = strcspn(string1,"\n");
-    printf("%d",len);
+    printf("%d",len);// impreme un char alaeatorio en memoria???
 
-    for(int i=len;i>-1;i--){
+    for(int i = len;i>-1;i--){
 
         k++;
         rev_string[k]=string1[i];
@@ -199,16 +195,105 @@ int main_1_5(void){
 
     }
     printf("%s",rev_string);
+}
+
+int main_1_5(void){
+
+    char string1[40];
+
+
+    printf("Ingresar texto:\n");
+    fgets(string1,sizeof(string1),stdin);
+    //string1[strspn(string1,"\n")]='\0';
+
+
+    reverse_string(string1);
+
 
     return 0;
+
+}
+
+/*
+1.6 Busqueda de un caracter en una cadena
+Escribe una funcion que tome una cadena y un caracter como entrada, y devuelva
+la posicion de la primera ocurrencia de ese caracter en la cadena utilizando
+punteros y funciones de la libreria string.h.
+*/
+
+void search_for(char *string,char *character){
+//devuelve el index de dicha letra
+    int index = 0;
+    int len =strcspn(string,"\n");
+
+    for(int i=0;i<len;i++){
+        index++;
+        if(string[i]==*character){
+            printf("letra %c en index: %d\n",*character,index);
+        }
+    }
+}
+
+int main_1_6(void){
+
+    char character;
+    char string[40];
+
+    printf("Ingresar texto:\n");
+    fgets(string,sizeof(string),stdin);
+    fflush(stdin);
+
+    printf("Ingresar texto:\n");
+    scanf("%c",&character);
+
+    search_for(string,&character);
+
+    return 0;
+}
+
+/*
+1.7 Eliminacion de un caracter de una cadena
+Escribe una funcion que tome una cadena y un caracter como entrada, y elimine
+todas las ocurrencias de ese caracter en la cadena utilizando punteros y funciones
+de la libreria string.h.
+*/
+void borrar(char *string,char *character){
+    for()
 
 }
 
 
 
 
-int main(){
-    main_1_5();
+
+void borrar(char *string,char *character){
+//devuelve el index de dicha letra
+    int index = 0;
+    int len =strcspn(string,"\n");
+
+    for(int i=0;i<len;i++){
+        index++;
+        if(string[i]==*character){
+            printf("letra %c en index: %d\n",*character,index);
+        }
+    }
+}
+
+
+
+
+
+int main_1_7(){
+
+
+
+    return 0;
+}
+
+
+
+int main(void){
+    main_1_7();
 /*
     int option;
 
@@ -236,6 +321,13 @@ int main(){
             case 5:
                 main_1_5();
                 break;
+            case 6:
+                main_1_6();
+                break;
+            case 7:
+                main_1_7();
+                break;
+
             default:
                 printf("Opcion no valida!");
 
