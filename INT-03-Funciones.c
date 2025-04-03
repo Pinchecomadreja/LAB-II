@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<math.h>
 #include<colordlg.h>
 
 #define PI 3.14159
@@ -11,7 +10,7 @@ void calculocuadrado(int *lado){
     int area, perimetro;
 
     perimetro= (*lado)*4;
-    area= pow(*lado,2);//error al usar simbolos default *(sera tema de punteros??)
+    area= (*lado)*(*lado);//error al usar simbolos default *(sera tema de punteros??)
 
     printf("\033[0;32m");//color green
     printf("perimetro:%d\narea:%d\n",perimetro,area);
@@ -38,7 +37,7 @@ void calculocirculo(int *radio){
 
     int area, perimetro;
 
-    area=PI*pow(*radio,2);
+    area=PI*(*radio)*(*radio);
     perimetro=(*radio)*PI*2;
 
     printf("\033[0;32m");//color green
